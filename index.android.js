@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+ import { Button } from 'antd-mobile';
 
 export default class RegularBus_Manage extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class RegularBus_Manage extends Component {
         <Text >
 			Hello!xxd121
         </Text>
+        <Button> </Button>
       </View>
     );
   }
