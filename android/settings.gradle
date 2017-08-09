@@ -1,0 +1,3 @@
+rootProject.name = 'RegularBus_Manage'
+
+include ':app'
