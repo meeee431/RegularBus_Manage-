@@ -7,12 +7,12 @@
 import {AppRegistry} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 
-import HomeScreen from './screens/home/HomeScreen';
- import AddNewScreen from './screens/addnew/AddNewScreen';
+import IndexScreen from './screens/home/IndexScreen';
+
 
 const App = StackNavigator({
-        Main: {screen: HomeScreen},
-        AddNew: {screen: AddNewScreen},
+        Main: {screen: IndexScreen},
+
         
     }, {
         headerMode: 'none',
@@ -21,4 +21,4 @@ const App = StackNavigator({
 
 
 //如果使用template 创建，需要将‘MarnoRN’替换成你自己项目的名称
-AppRegistry.registerComponent('RealmTest', () => App);
+AppRegistry.registerComponent('RegularBus_Manage', () => App);
