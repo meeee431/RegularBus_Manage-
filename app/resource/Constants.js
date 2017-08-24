@@ -14,7 +14,12 @@ const constants = {
     /**
      * 字符串常量
      */
-    string_title_homeScreen: '加油记录',
+    string_title_IndexScreen: '查询',
+    string_IndexScreen_TabBar1: '查询',
+    string_IndexScreen_TabBar2: '乘车',
+    string_IndexScreen_TabBar3: '我的',
+    
+    
 }
 
 export default constants;

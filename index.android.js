@@ -1,49 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Created by kid on 2017/5/17
+ * Desc:Android 程序入口
  */
-
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
- import { Button } from 'antd-mobile';
-
-export default class RegularBus_Manage extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
- 
-        <Text >
-			Hello!xxd121
-        </Text>
-        <Button> </Button>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('RegularBus_Manage', () => RegularBus_Manage);
+import './app/index';

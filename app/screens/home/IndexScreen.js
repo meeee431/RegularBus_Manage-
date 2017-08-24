@@ -4,30 +4,19 @@
  * Desc:
  */
 import React, { Component } from "react";
-import { View, Alert, Text } from "react-native";
-import { TabBar, SearchBar } from 'antd-mobile';
-
+import { View  } from "react-native";
+import { TabBar  } from 'antd-mobile';
+import { Constants, Images } from "../../resource/";
+import QueryOfStation from "../Query/QueryOfStation";
 
 export default class IndexScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: Constants.string_IndexScreen_TabBar1,
     };
   }
-
-  renderContent(pageText) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
-        <SearchBar
-          placeholder="搜索"
-          showCancelButton
-        />
-        <Text style={{ margin: 50 }}>{pageText}</Text>
-      </View>
-    );
-  }
-
+ 
   onChangeTab(tabName) {
     this.setState({
       selectedTab: tabName,
@@ -35,48 +24,39 @@ export default class IndexScreen extends Component {
   }
 
   render() {
+   
     return (
       <TabBar
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
-        barTintColor="#ccc"
+        barTintColor="#FFFFFF"
       >
         <TabBar.Item
-          title="生活"
-        
-   
-          selected={this.state.selectedTab === 'blueTab'}
-          onPress={() => this.onChangeTab('blueTab')}
+          title="查询"
+ 
+          selected={this.state.selectedTab === Constants.string_IndexScreen_TabBar1}
+          onPress={() => this.onChangeTab(Constants.string_IndexScreen_TabBar1)}
         >
-          {this.renderContent('生活 Tab')}
+          <QueryOfStation/>
         </TabBar.Item>
         <TabBar.Item
         
        
-          title="口碑"
-          badge={2}
-          selected={this.state.selectedTab === 'redTab'}
-          onPress={() => this.onChangeTab('redTab')}
+          title="乘车"
+          selected={this.state.selectedTab === Constants.string_IndexScreen_TabBar2}
+          onPress={() => this.onChangeTab(Constants.string_IndexScreen_TabBar2)}
         >
-          {this.renderContent('口碑 Tab')}
+        
         </TabBar.Item>
+ 
         <TabBar.Item
-       
-       
-          title="朋友"
-          selected={this.state.selectedTab === 'greenTab'}
-          onPress={() => this.onChangeTab('greenTab')}
-        >
-          {this.renderContent('朋友 Tab')}
-        </TabBar.Item>
-        <TabBar.Item
-          icon="home"
+     
         
           title="我的"
-          selected={this.state.selectedTab === 'yellowTab'}
-          onPress={() => this.onChangeTab('yellowTab')}
+          selected={this.state.selectedTab === Constants.string_IndexScreen_TabBar3}
+          onPress={() => this.onChangeTab(Constants.string_IndexScreen_TabBar3)}
         >
-          {this.renderContent('我的 Tab')}
+       
         </TabBar.Item>
       </TabBar>
     );
