@@ -7,9 +7,10 @@ import React, { Component } from "react";
 import { View  } from "react-native";
 import { TabBar  } from 'antd-mobile';
 import { Constants, Images } from "../../resource/";
-import QueryOfStation from "../Query/QueryOfStation";
+import QueryInfo from "../Query/QueryInfo";
 
 export default class IndexScreen extends Component {
+ 
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +38,7 @@ export default class IndexScreen extends Component {
           selected={this.state.selectedTab === Constants.string_IndexScreen_TabBar1}
           onPress={() => this.onChangeTab(Constants.string_IndexScreen_TabBar1)}
         >
-          <QueryOfStation/>
+          <QueryInfo/>
         </TabBar.Item>
         <TabBar.Item
         

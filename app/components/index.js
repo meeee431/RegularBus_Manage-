@@ -4,9 +4,8 @@
  * Desc: 名字默认为 index.js ，修改后会报错。
  *       所有组件必须通过这个类导出一遍才能在其他类中调用
  */
-import ImageButton from './ImageButton'
-import TitleBar from './TitleBar'
-import ProfileItem from './ProfileItem';
-import QRScannerView from './QRScannerView';
 
-export {ImageButton, TitleBar, ProfileItem,QRScannerView}
+import SearchButton from './SearchButton';
+import History from './History';
+
+export {SearchButton,History}

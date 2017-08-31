@@ -5,28 +5,22 @@
  */
 'use strict';
 import React, { Component } from "react";
-import { View, Text } from 'react-native';
-import { Tabs,WingBlank  } from 'antd-mobile';
-const TabPane = Tabs.TabPane;
+import { View, Text,TextInput } from 'react-native';
+import { InputItem } from 'antd-mobile';
+import  {SearchButton,History} from '../../components';
 export default class QueryOfStation extends Component {
-    render() {
-      return (
-        <View style={{ flex: 1}}>
-
-          <Tabs defaultActiveKey="1" >
-            <TabPane tab="地点查询" key="1">
-
-            </TabPane>
-            <TabPane tab="线路查询" key="2">
- 
-            </TabPane>
-            <TabPane tab="活动查询" key="3">
- 
-            </TabPane>
-          </Tabs>
-          
-        </View>
+  render() {
+    return (
+      <View > 
+          <View style={{  height:200  }}>
+                <SearchButton/>
+          </View>
+          <View style={{ height:200 }}>
+              <History text="常用路线"/>
+          </View>
+        
+     </View>
       );
-    }
-  
   }
+
+}

@@ -11,7 +11,8 @@ const images = {
     ic_menu: require('./imgs/menu.png'),
  
     ic_ridenow: require('./imgs/ridenow.png'),
- 
+    
+    ic_arrowchange:require('./imgs/arrowchange.png'),
  
 };
 
