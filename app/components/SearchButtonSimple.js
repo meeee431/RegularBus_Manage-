@@ -16,6 +16,7 @@ export default class SearchButton extends Component {
     super(props);
  
   }
+
     render() {
         return (
 
@@ -24,7 +25,8 @@ export default class SearchButton extends Component {
                  <TextInput  
                         placeholder={this.props.placeholder}
                         underlineColorAndroid='transparent' 
-                        style={styles.inputText}/>  
+                        style={styles.inputText}
+                        onChangeText={ this.props.click} />  
                 <Image source={Images.ic_ridenow} style={styles.cancelIcon}/>  
             </View>
 
@@ -32,6 +34,7 @@ export default class SearchButton extends Component {
 
         )
     }
+ 
 }
 
 const styles = StyleSheet.create({

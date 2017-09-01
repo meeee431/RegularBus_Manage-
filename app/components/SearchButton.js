@@ -10,14 +10,20 @@ import  {Images} from '../resource'
 import {Button  } from 'antd-mobile';
 export default class SearchButton extends Component {
     //设置默认值
- 
+   constructor(props) {
+    super(props);
+    this.state={
+        start:'',
+        end:'',
+    }
+  }
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.containerUp}>
                     <View style={styles.containerUpLeft}>
-                    <SearchButtonSimple  placeholder="出发地"/>
-                    <SearchButtonSimple placeholder="目的地"/>
+                    <SearchButtonSimple  placeholder="出发地"  ref="textInputRefer" click={this.startchange}/>
+                    <SearchButtonSimple placeholder="目的地" click={this.endchange}/>
                     </View>
                     <View style={styles.containerUpRight}>
                         <Image source={Images.ic_arrowchange} style={styles.change}/>  
@@ -26,7 +32,7 @@ export default class SearchButton extends Component {
                 </View>
                 <View style={styles.containerDown}>
                     
-                    <Button  type="primary" style={styles.submit} >查询</Button>
+                    <Button  type="primary" style={styles.submit} onClick={this.click} >查询</Button>
            
                 </View>
 
@@ -35,6 +41,25 @@ export default class SearchButton extends Component {
 
         )
     }
+    //出发地
+    startchange=(value)=>{
+        
+        this.setState({  
+            start: value
+          })  ;
+        
+    }
+    //目的地
+    endchange=(value)=>{
+        this.setState({  
+            end: value
+          })  ;
+    }
+    click=()=>{
+ 
+       this.props.submit(this.state.start,this.state.end);
+    }
+ 
 }
 
 const styles = StyleSheet.create({
@@ -84,7 +109,7 @@ const styles = StyleSheet.create({
     submit:{
         borderRadius: 80,  // 设置圆角边
         marginLeft: 20,
-        marginRight: 80,
+        marginRight: 40,
         backgroundColor:"skyblue",
         alignItems:'center'
     }
