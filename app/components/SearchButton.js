@@ -4,9 +4,9 @@
  * Desc:
  */
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet,Image } from 'react-native';
+import { View, TextInput, StyleSheet,Image,TouchableHighlight } from 'react-native';
 import SearchButtonSimple from './SearchButtonSimple';
-import  {Images} from '../resource'
+import  {Images} from '../resource';
 import {Button  } from 'antd-mobile';
 export default class SearchButton extends Component {
     //设置默认值
@@ -22,13 +22,18 @@ export default class SearchButton extends Component {
             <View style={styles.container}>
                 <View style={styles.containerUp}>
                     <View style={styles.containerUpLeft}>
-                    <SearchButtonSimple  placeholder="出发地"  ref="textInputRefer" click={this.startchange}/>
-                    <SearchButtonSimple placeholder="目的地" click={this.endchange}/>
+                    <SearchButtonSimple text={this.state.start} placeholder="出发地"  click={this.startchange}/>
+                    <SearchButtonSimple  text={this.state.end} placeholder="目的地" click={this.endchange}/>
                     </View>
+                    <TouchableHighlight onPress={this.change}>
                     <View style={styles.containerUpRight}>
-                        <Image source={Images.ic_arrowchange} style={styles.change}/>  
+                 
+                    <Image source={Images.ic_arrowchange} style={styles.change}/>  
+
                        
                     </View>
+                    </TouchableHighlight>
+                     
                 </View>
                 <View style={styles.containerDown}>
                     
@@ -42,8 +47,9 @@ export default class SearchButton extends Component {
         )
     }
     //出发地
+    //因为这里要设置this.state所以用箭头函数
     startchange=(value)=>{
-        
+      
         this.setState({  
             start: value
           })  ;
@@ -56,8 +62,18 @@ export default class SearchButton extends Component {
           })  ;
     }
     click=()=>{
- 
+    
        this.props.submit(this.state.start,this.state.end);
+    }
+    //切换
+    change=()=>{
+        let start=this.state.start;
+        let end=this.state.end;
+
+        this.setState({  
+            start: end,
+            end:start
+          })  ;
     }
  
 }

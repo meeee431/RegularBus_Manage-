@@ -14,6 +14,7 @@ const images = {
     
     ic_arrowchange:require('./imgs/arrowchange.png'),
  
+    m_search:require('./imgs/search.png'),
 };
 
 export default images;

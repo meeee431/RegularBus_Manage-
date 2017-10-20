@@ -26,6 +26,7 @@ export default class SearchButton extends Component {
                         placeholder={this.props.placeholder}
                         underlineColorAndroid='transparent' 
                         style={styles.inputText}
+                        value={this.props.text}
                         onChangeText={ this.props.click} />  
                 <Image source={Images.ic_ridenow} style={styles.cancelIcon}/>  
             </View>

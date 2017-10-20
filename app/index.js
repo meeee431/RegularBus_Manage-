@@ -9,17 +9,18 @@ import {StackNavigator} from 'react-navigation';
 
 import IndexScreen from './screens/home/IndexScreen';
  
+ 
 
 
 const App = StackNavigator({
-        Main: {screen: IndexScreen},
+        Main: {screen: IndexScreen },
 
         
     }, {
-        headerMode: 'none',
+       //headerMode: 'none',
     },   
 );
 
 
-//如果使用template 创建，需要将‘MarnoRN’替换成你自己项目的名称
+ 
 AppRegistry.registerComponent('RegularBus_Manage', () => App);
